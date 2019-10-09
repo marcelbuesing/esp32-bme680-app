@@ -98,17 +98,17 @@ unsafe fn rust_blink_and_write() {
 
         match state {
             bme680::FieldDataCondition::NewData => {
-                let msg = format!("NEW TEMP: {}C.\n", data.temperature_celsius());
+                let msg = format!("\nNEW TEMP: {}C", data.temperature_celsius());
                 uart_write_bytes(UART_NUM, msg.as_ptr() as *const _, msg.len());
 
-                let msg = format!("NEW HUMIDITY: {}%.\n", data.humidity_percent());
+                let msg = format!("\nNEW HUMIDITY: {}%", data.humidity_percent());
                 uart_write_bytes(UART_NUM, msg.as_ptr() as *const _, msg.len());
 
-                let msg = format!("NEW PRESSURE: {}hPa.\n", data.pressure_hpa());
+                let msg = format!("\nNEW PRESSURE: {}hPa\n", data.pressure_hpa());
                 uart_write_bytes(UART_NUM, msg.as_ptr() as *const _, msg.len());
             }
             bme680::FieldDataCondition::Unchanged => {
-                let msg = ".\n";
+                let msg = ".";
                 uart_write_bytes(UART_NUM, msg.as_ptr() as *const _, msg.len());
             }
         }

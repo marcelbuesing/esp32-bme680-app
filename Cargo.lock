@@ -30,6 +30,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "esp-app"
+version = "0.1.0"
+dependencies = [
+ "bme680 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "esp-idf-alloc 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "esp-idf-hal 0.2.0 (git+https://github.com/marcelbuesing/esp-idf-hal.git)",
+ "esp-idf-sys 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "esp-idf-alloc"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -49,16 +59,6 @@ dependencies = [
 name = "esp-idf-sys"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "esp32-bme680-app"
-version = "0.1.0"
-dependencies = [
- "bme680 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "esp-idf-alloc 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "esp-idf-hal 0.2.0 (git+https://github.com/marcelbuesing/esp-idf-hal.git)",
- "esp-idf-sys 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
-]
 
 [[package]]
 name = "genio"
