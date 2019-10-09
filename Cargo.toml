@@ -1,0 +1,24 @@
+[package]
+name = "esp32-bme680-app"
+version = "0.1.0"
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+bme680 = "0.4"
+esp-idf-alloc = "0.1"
+esp-idf-sys = "0.1"
+# Until https://github.com/sapir/esp-idf-hal/pull/1 is merged
+esp-idf-hal = { git = "https://github.com/marcelbuesing/esp-idf-hal.git", branch = "master" }
+
+[profile.dev]
+lto = false 
+incremental = false
+debug = false # debug adds frame pointers - which must be omitted
+codegen-units = 1
+
+[profile.release]
+lto = false
+incremental = false
+debug = false # debug adds frame pointers - which must be omitted
+codegen-units = 1
